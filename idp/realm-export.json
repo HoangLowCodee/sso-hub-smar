@@ -182,6 +182,41 @@
       "enabled": true,
       "bearerOnly": true,
       "protocol": "openid-connect"
+    },
+    {
+      "clientId": "sso-hub-portal",
+      "name": "SSO Hub Portal (ID Login and User Dashboard)",
+      "description": "Cổng đăng nhập tập trung và Dashboard chọn ứng dụng cho người dùng",
+      "rootUrl": "http://localhost:4000",
+      "baseUrl": "http://localhost:4000",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "redirectUris": [
+        "http://localhost:4000/*",
+        "http://localhost:4000/index.html",
+        "http://localhost:5173/*",
+        "http://localhost:3000/*",
+        "https://*.vercel.app/*",
+        "https://*.onrender.com/*",
+        "*"
+      ],
+      "webOrigins": [
+        "http://localhost:4000",
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://sso-hub-173a.onrender.com",
+        "https://creative-industry-center.vercel.app",
+        "https://la-vi-et.vercel.app",
+        "+"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "http://localhost:4000/*##https://*.vercel.app/*##+"
+      },
+      "protocol": "openid-connect"
     }
   ],
   "users": [
