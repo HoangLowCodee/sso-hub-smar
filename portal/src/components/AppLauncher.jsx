@@ -13,6 +13,9 @@ import {
 export default function AppLauncher() {
   const { currentConfig, showToast } = useAuth();
 
+  const creativeCloudUrl = import.meta.env.VITE_CREATIVE_URL || 'https://creative-industry-center.vercel.app/admin/login';
+  const lavietCloudUrl = import.meta.env.VITE_LAVIET_URL || 'https://la-vi-et.vercel.app/admin/login';
+
   const handleOpenApp = (url, appName) => {
     showToast(`Đang chuyển hướng sang ${appName} với phiên SSO...`, 'info');
     setTimeout(() => {
@@ -71,7 +74,7 @@ export default function AppLauncher() {
           <div className="space-y-2 pt-4 border-t border-slate-800/80">
             <button
               type="button"
-              onClick={() => handleOpenApp('https://creative-industry-center.vercel.app/admin/login', 'Trung Tâm Sáng Tạo')}
+              onClick={() => handleOpenApp(creativeCloudUrl, 'Trung Tâm Sáng Tạo')}
               className="w-full py-2.5 px-4 rounded-xl font-semibold text-xs bg-red-700 hover:bg-red-600 text-white shadow-md shadow-red-700/20 transition flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Mở Bản Cloud (Vercel)</span>
@@ -118,7 +121,7 @@ export default function AppLauncher() {
           <div className="space-y-2 pt-4 border-t border-slate-800/80">
             <button
               type="button"
-              onClick={() => handleOpenApp('https://la-vi-et.vercel.app/admin/login', 'Là Việt Coffee')}
+              onClick={() => handleOpenApp(lavietCloudUrl, 'Là Việt Coffee')}
               className="w-full py-2.5 px-4 rounded-xl font-bold text-xs bg-amber-600 hover:bg-amber-500 text-slate-950 shadow-md shadow-amber-600/20 transition flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Mở Bản Cloud (Vercel)</span>

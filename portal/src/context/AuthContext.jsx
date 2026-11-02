@@ -6,9 +6,9 @@ export const SSO_ENV_CONFIG = {
   render: {
     id: 'render',
     name: 'Cloud Render (Live)',
-    baseUrl: 'https://sso-hub-173a.onrender.com',
-    realm: 'sso-platform',
-    clientId: 'sso-hub-portal',
+    baseUrl: (import.meta.env.VITE_KEYCLOAK_URL || 'https://sso-hub-173a.onrender.com').replace(/\/+$/, ''),
+    realm: import.meta.env.VITE_KEYCLOAK_REALM || 'sso-platform',
+    clientId: import.meta.env.VITE_KEYCLOAK_CLIENT_ID || 'sso-hub-portal',
     fallbackClientId: 'react-flask-app',
   },
   local: {
