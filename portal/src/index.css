@@ -2,29 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-mesh {
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(209, 137, 47, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.12) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(220, 38, 38, 0.12) 0px, transparent 50%);
+/* Background Monochrome hiện đại */
+.bg-grid-pattern {
+  background-color: #09090b;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
+/* Glass panel phong cách tối giản Trắng - Đen */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(18, 18, 21, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.glass-panel-hover:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(24, 24, 27, 0.95);
+}
+
+/* Scrollbar tinh gọn */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #3f3f46;
   border-radius: 9999px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
-

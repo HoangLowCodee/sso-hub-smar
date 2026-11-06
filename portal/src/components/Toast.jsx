@@ -14,19 +14,19 @@ export default function Toast() {
         const isError = toast.type === 'error';
 
         const borderBg = isSuccess
-          ? 'bg-emerald-950/95 border-emerald-500/50 text-emerald-200'
+          ? 'bg-zinc-950/95 border-zinc-600 text-white'
           : isError
-          ? 'bg-red-950/95 border-red-500/50 text-red-200'
-          : 'bg-slate-900/95 border-slate-700 text-slate-200';
+          ? 'bg-zinc-950/95 border-red-600/80 text-red-200'
+          : 'bg-zinc-950/95 border-zinc-700 text-zinc-200';
 
         const Icon = isSuccess ? CheckCircle2 : isError ? AlertTriangle : Info;
 
         return (
           <div
             key={toast.id}
-            className={`p-4 rounded-xl border shadow-2xl flex items-center gap-3 text-xs sm:text-sm font-medium transition-all pointer-events-auto backdrop-blur-md ${borderBg}`}
+            className={`p-4 rounded-xl border shadow-2xl flex items-center gap-3 text-xs sm:text-sm font-medium transition-all pointer-events-auto backdrop-blur-xl ${borderBg}`}
           >
-            <Icon className="w-5 h-5 flex-shrink-0" />
+            <Icon className="w-5 h-5 flex-shrink-0 text-white" />
             <span className="flex-1 leading-snug">{toast.message}</span>
             <button
               type="button"
@@ -41,4 +41,3 @@ export default function Toast() {
     </div>
   );
 }
-

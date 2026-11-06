@@ -19,7 +19,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-slate-950 bg-mesh flex flex-col font-sans text-slate-100">
+      <div className="min-h-screen bg-black bg-grid-pattern flex flex-col font-sans text-zinc-100 selection:bg-white selection:text-black">
         <Toast />
         <Routes>
           {/* Trang ID Đăng Nhập */}
