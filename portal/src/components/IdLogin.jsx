@@ -13,6 +13,7 @@ import {
   Server,
   Loader2,
   FolderKanban,
+  CheckCircle,
 } from 'lucide-react';
 
 export default function IdLogin() {
@@ -27,8 +28,8 @@ export default function IdLogin() {
 
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('alice');
+  const [password, setPassword] = useState('123456');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -54,22 +55,26 @@ export default function IdLogin() {
     }
   };
 
-  const handleQuickFill = (account) => {
-    if (account === 'alice') {
-      setUsername('alice');
-      setPassword('123456');
-    } else {
-      setUsername('bob');
-      setPassword('123456');
+  const handleQuickLogin = async (acc) => {
+    const user = acc === 'alice' ? 'alice' : 'bob';
+    setUsername(user);
+    setPassword('123456');
+    setIsLoading(true);
+    try {
+      await loginWithPassword(user, '123456');
+      navigate('/dashboard', { replace: true });
+    } catch (err) {
+      showToast(err.message, 'error');
+    } finally {
+      setIsLoading(false);
     }
-    showToast(`Đã nạp sẵn tài khoản mẫu: ${account}`, 'info');
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center px-4 py-12 relative z-10">
+    <div className="min-h-screen flex flex-col justify-center items-center px-4 py-12 relative z-10 bg-black text-white selection:bg-white selection:text-black">
       
-      {/* Bộ chọn môi trường máy chủ SSO - Tone Trắng Đen */}
-      <div className="mb-6 flex items-center gap-2 p-1.5 rounded-full glass-panel text-xs text-zinc-300 shadow-xl border border-zinc-800">
+      {/* Selector: Máy chủ SSO - Trắng Đen */}
+      <div className="mb-6 flex items-center gap-2 p-1.5 rounded-full bg-zinc-950 text-xs text-zinc-300 shadow-xl border border-zinc-800">
         <span className="px-3 py-1 font-semibold text-zinc-400 flex items-center gap-1.5">
           <Server className="w-3.5 h-3.5 text-zinc-300" />
           Máy chủ SSO:
@@ -77,9 +82,9 @@ export default function IdLogin() {
         <button
           type="button"
           onClick={() => switchEnv('render')}
-          className={`px-3.5 py-1 rounded-full font-medium transition-all ${
+          className={`px-3.5 py-1 rounded-full font-bold transition-all cursor-pointer ${
             activeEnv === 'render'
-              ? 'bg-white text-black font-bold shadow-sm'
+              ? 'bg-white text-black shadow-sm'
               : 'text-zinc-400 hover:text-white hover:bg-zinc-800'
           }`}
         >
@@ -88,9 +93,9 @@ export default function IdLogin() {
         <button
           type="button"
           onClick={() => switchEnv('local')}
-          className={`px-3.5 py-1 rounded-full font-medium transition-all ${
+          className={`px-3.5 py-1 rounded-full font-bold transition-all cursor-pointer ${
             activeEnv === 'local'
-              ? 'bg-white text-black font-bold shadow-sm'
+              ? 'bg-white text-black shadow-sm'
               : 'text-zinc-400 hover:text-white hover:bg-zinc-800'
           }`}
         >
@@ -99,41 +104,43 @@ export default function IdLogin() {
       </div>
 
       {/* Card Đăng Nhập ID - Minimalist Monochrome */}
-      <div className="w-full max-w-md bg-zinc-950/90 rounded-2xl p-8 sm:p-9 shadow-2xl relative overflow-hidden border border-zinc-800/90 backdrop-blur-2xl">
+      <div className="w-full max-w-md bg-zinc-950 rounded-2xl p-8 sm:p-9 shadow-2xl relative overflow-hidden border border-zinc-800">
         
-        {/* Đường viền ánh kim bạc trên cùng */}
+        {/* Đường viền trắng bạc trên cùng */}
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent opacity-80"></div>
 
         {/* Tiêu đề & Logo ID */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white text-black mb-4 shadow-xl shadow-white/5 font-extrabold">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white text-black mb-4 shadow-xl shadow-white/5 font-black">
             <ShieldCheck className="w-8 h-8 text-black" />
           </div>
-          <h1 className="text-2xl font-extrabold tracking-tight text-white mb-1.5">
-            CỔNG ĐĂNG NHẬP ID
+          <h1 className="text-2xl font-black tracking-tight text-white mb-1.5 uppercase">
+            Cổng Đăng Nhập ID
           </h1>
           <p className="text-xs text-zinc-400 leading-relaxed">
-            Hệ thống xác thực tập trung & quản trị toàn bộ các dự án
+            Đăng nhập một lần để truy cập và quản lý toàn bộ các dự án trong hệ sinh thái
           </p>
         </div>
 
-        {/* Nút nạp nhanh tài khoản */}
-        <div className="mb-6 p-3 rounded-xl bg-zinc-900/80 border border-zinc-800/80 flex items-center justify-between text-xs">
+        {/* Nút đăng nhập 1 chạm nhanh */}
+        <div className="mb-6 p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-between text-xs">
           <span className="text-zinc-400 flex items-center gap-1.5 font-medium">
-            <Sparkles className="w-3.5 h-3.5 text-zinc-300" /> Dùng thử nhanh:
+            <Sparkles className="w-3.5 h-3.5 text-white" /> Đăng nhập nhanh:
           </span>
           <div className="flex items-center gap-2">
             <button
               type="button"
-              onClick={() => handleQuickFill('alice')}
-              className="px-2.5 py-1 rounded-lg bg-zinc-800 hover:bg-white hover:text-black text-zinc-200 font-semibold transition border border-zinc-700 cursor-pointer"
+              disabled={isLoading}
+              onClick={() => handleQuickLogin('alice')}
+              className="px-3 py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-black font-extrabold transition shadow-sm cursor-pointer disabled:opacity-50"
             >
               Alice (Admin)
             </button>
             <button
               type="button"
-              onClick={() => handleQuickFill('bob')}
-              className="px-2.5 py-1 rounded-lg bg-zinc-800 hover:bg-white hover:text-black text-zinc-200 font-semibold transition border border-zinc-700 cursor-pointer"
+              disabled={isLoading}
+              onClick={() => handleQuickLogin('bob')}
+              className="px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white font-semibold transition border border-zinc-700 cursor-pointer disabled:opacity-50"
             >
               Bob (User)
             </button>
@@ -157,7 +164,7 @@ export default function IdLogin() {
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Ví dụ: alice hoặc alice@creative.com"
                 required
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition font-medium"
               />
             </div>
           </div>
@@ -195,12 +202,12 @@ export default function IdLogin() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3 px-4 rounded-xl font-bold text-sm bg-white hover:bg-zinc-200 text-black shadow-lg shadow-white/5 active:scale-[0.99] transition flex items-center justify-center gap-2 cursor-pointer mt-3 disabled:opacity-50"
+            className="w-full py-3.5 px-4 rounded-xl font-black text-xs uppercase tracking-wider bg-white hover:bg-zinc-200 text-black shadow-xl shadow-white/5 active:scale-[0.99] transition flex items-center justify-center gap-2 cursor-pointer mt-3 disabled:opacity-50"
           >
             {isLoading ? (
               <>
                 <Loader2 className="w-4 h-4 animate-spin text-black" />
-                <span>Đang xác thực ID...</span>
+                <span>Đang xử lý đăng nhập...</span>
               </>
             ) : (
               <>
@@ -228,10 +235,10 @@ export default function IdLogin() {
         <button
           type="button"
           onClick={loginWithOidc}
-          className="w-full py-2.5 px-4 rounded-xl font-medium text-xs bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white border border-zinc-800 transition flex items-center justify-center gap-2 cursor-pointer"
+          className="w-full py-2.5 px-4 rounded-xl font-semibold text-xs bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white border border-zinc-800 transition flex items-center justify-center gap-2 cursor-pointer"
         >
           <ExternalLink className="w-4 h-4 text-zinc-400" />
-          <span>Đăng nhập qua Giao diện Keycloak (PKCE)</span>
+          <span>Mở Cổng Xác Thực Keycloak Hosted</span>
         </button>
 
         {/* Chú thích điều hướng */}
