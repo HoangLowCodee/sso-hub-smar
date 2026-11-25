@@ -2,39 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Background Heritage Di Sản Quý Tộc */
+/* Background Heritage Economy Di Sản Quý Tộc (Jade & Gold) */
 .bg-heritage {
-  background-color: #141412;
+  background-color: #061e17;
   background-image: 
-    radial-gradient(at 0% 0%, rgba(113, 0, 8, 0.22) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(212, 149, 32, 0.16) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(14, 14, 12, 0.95) 0px, transparent 100%);
+    radial-gradient(at 0% 0%, rgba(13, 72, 56, 0.4) 0px, transparent 55%),
+    radial-gradient(at 100% 100%, rgba(194, 155, 87, 0.22) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(6, 30, 23, 0.96) 0px, transparent 100%);
 }
 
 /* Glass & Heritage Cards */
 .heritage-card {
-  background: #1e1e1a;
-  border: 1px solid #39321f;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 149, 32, 0.05);
+  background: #0a2920;
+  border: 1px solid #184538;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 25px rgba(194, 155, 87, 0.08);
 }
 
 .heritage-card-hover:hover {
-  border-color: #d49520;
-  box-shadow: 0 25px 50px -12px rgba(113, 0, 8, 0.25), 0 0 30px rgba(212, 149, 32, 0.15);
+  border-color: #c29b57;
+  box-shadow: 0 25px 50px -12px rgba(13, 72, 56, 0.4), 0 0 30px rgba(194, 155, 87, 0.2);
 }
 
-/* Scrollbar Heritage */
+/* Scrollbar Heritage Jade & Gold */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #39321f;
+  background: #184538;
   border-radius: 9999px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #d49520;
+  background: #c29b57;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #141412;
+  background: #061e17;
 }

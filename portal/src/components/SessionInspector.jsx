@@ -17,44 +17,44 @@ export default function SessionInspector() {
 
   return (
     <div className="max-w-4xl space-y-6">
-      <div className="bg-[#141412] rounded-2xl p-6 sm:p-7 border border-[#39321f] shadow-xl">
+      <div className="bg-[#061e17] rounded-2xl p-6 sm:p-7 border border-[#184538] shadow-xl">
         <h3 className="text-base font-bold text-white flex items-center gap-2 mb-4">
-          <Cpu className="w-4 h-4 text-[#d49520]" />
+          <Cpu className="w-4 h-4 text-[#c29b57]" />
           Thông Số Kỹ Thuật Phiên Làm Việc (OIDC Claims)
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5 mb-6">
-          <div className="p-3.5 rounded-xl bg-[#1e1e1a] border border-[#39321f]">
-            <div className="text-[11px] text-[#b8aa85]">Issuer (Nhà cung cấp ID)</div>
-            <div className="text-xs font-mono text-[#d49520] mt-1 truncate" title={profile.iss || currentConfig.baseUrl}>
+          <div className="p-3.5 rounded-xl bg-[#0a2920] border border-[#184538]">
+            <div className="text-[11px] text-[#d8b06c]/80">Issuer (Nhà cung cấp ID)</div>
+            <div className="text-xs font-mono text-[#c29b57] mt-1 truncate" title={profile.iss || currentConfig.baseUrl}>
               {profile.iss || `${currentConfig.baseUrl}/realms/${currentConfig.realm}`}
             </div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-[#1e1e1a] border border-[#39321f]">
-            <div className="text-[11px] text-[#b8aa85]">Client ID Kết Nối</div>
+          <div className="p-3.5 rounded-xl bg-[#0a2920] border border-[#184538]">
+            <div className="text-[11px] text-[#d8b06c]/80">Client ID Kết Nối</div>
             <div className="text-xs font-mono text-white font-bold mt-1">
               {tokens.used_client_id || currentConfig.clientId}
             </div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-[#1e1e1a] border border-[#39321f]">
-            <div className="text-[11px] text-[#b8aa85]">Thời Điểm Cấp Token</div>
-            <div className="text-xs font-mono text-[#e9e5da] mt-1">{issuedAt}</div>
+          <div className="p-3.5 rounded-xl bg-[#0a2920] border border-[#184538]">
+            <div className="text-[11px] text-[#d8b06c]/80">Thời Điểm Cấp Token</div>
+            <div className="text-xs font-mono text-[#f5efe5] mt-1">{issuedAt}</div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-[#1e1e1a] border border-[#39321f]">
-            <div className="text-[11px] text-[#b8aa85]">Hết Hạn (Exp)</div>
-            <div className="text-xs font-mono text-[#d49520] mt-1">{expiresAt}</div>
+          <div className="p-3.5 rounded-xl bg-[#0a2920] border border-[#184538]">
+            <div className="text-[11px] text-[#d8b06c]/80">Hết Hạn (Exp)</div>
+            <div className="text-xs font-mono text-[#c29b57] mt-1">{expiresAt}</div>
           </div>
         </div>
 
         <div>
-          <div className="text-xs font-semibold text-[#d49520] uppercase tracking-wider mb-2 flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 text-[#d49520]" />
+          <div className="text-xs font-semibold text-[#c29b57] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <ShieldCheck className="w-4 h-4 text-[#c29b57]" />
             Dữ Liệu Token Claims Đã Giải Mã (Decoded Payload):
           </div>
-          <pre className="p-4 rounded-xl bg-[#0e0e0c] border border-[#39321f] text-xs font-mono text-[#d49520] overflow-x-auto custom-scrollbar max-h-80 leading-relaxed">
+          <pre className="p-4 rounded-xl bg-[#041510] border border-[#184538] text-xs font-mono text-[#c29b57] overflow-x-auto custom-scrollbar max-h-80 leading-relaxed">
             {JSON.stringify(profile, null, 2)}
           </pre>
         </div>

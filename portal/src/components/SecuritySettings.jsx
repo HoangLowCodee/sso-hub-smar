@@ -41,90 +41,90 @@ export default function SecuritySettings() {
 
   return (
     <div className="max-w-2xl">
-      <div className="bg-[#141412] rounded-2xl p-6 sm:p-7 border border-[#39321f] shadow-xl">
+      <div className="bg-[#061e17] rounded-2xl p-6 sm:p-7 border border-[#184538] shadow-xl">
         
         <div className="mb-6">
           <h3 className="text-base font-bold text-white flex items-center gap-2">
-            <LockKeyhole className="w-5 h-5 text-[#d49520]" />
+            <LockKeyhole className="w-5 h-5 text-[#c29b57]" />
             Bảo Mật & Đổi Mật Khẩu
           </h3>
-          <p className="text-xs text-[#b8aa85] mt-1">
-            Mật khẩu mới sẽ áp dụng ngay lập tức cho tất cả các lần đăng nhập SSO sau này.
+          <p className="text-xs text-[#d8b06c]/90 mt-1">
+            Mật khẩu mới sẽ áp dụng ngay lập tức cho toàn bộ các lần đăng nhập tiếp theo vào hệ thống SSO Hub.
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           
           <div>
-            <label className="block text-xs font-semibold text-[#d49520] uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-semibold text-[#c29b57] uppercase tracking-wider mb-1.5">
               Mật Khẩu Hiện Tại
             </label>
             <input
               type="password"
               value={currentPassword}
               onChange={(e) => setCurrentPassword(e.target.value)}
-              placeholder="Nhập mật khẩu hiện tại (ví dụ: 123456)"
+              placeholder="Nhập mật khẩu hiện tại"
               required
-              className="w-full px-3.5 py-2.5 rounded-xl bg-[#1e1e1a] border border-[#39321f] text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#d49520] focus:ring-1 focus:ring-[#d49520] transition"
+              className="w-full px-4 py-2.5 rounded-xl bg-[#0a2920] border border-[#184538] text-sm text-[#f5efe5] placeholder-emerald-700/60 focus:outline-none focus:border-[#c29b57] focus:ring-1 focus:ring-[#c29b57] transition font-medium"
             />
           </div>
 
-          <div>
-            <label className="block text-xs font-semibold text-[#d49520] uppercase tracking-wider mb-1.5">
-              Mật Khẩu Mới
-            </label>
-            <input
-              type="password"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-              placeholder="Tối thiểu 6 ký tự"
-              required
-              minLength={6}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-[#1e1e1a] border border-[#39321f] text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#d49520] focus:ring-1 focus:ring-[#d49520] transition"
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-semibold text-[#c29b57] uppercase tracking-wider mb-1.5">
+                Mật Khẩu Mới
+              </label>
+              <input
+                type="password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                placeholder="Tối thiểu 6 ký tự"
+                required
+                className="w-full px-4 py-2.5 rounded-xl bg-[#0a2920] border border-[#184538] text-sm text-[#f5efe5] placeholder-emerald-700/60 focus:outline-none focus:border-[#c29b57] focus:ring-1 focus:ring-[#c29b57] transition font-medium"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-semibold text-[#c29b57] uppercase tracking-wider mb-1.5">
+                Xác Nhận Mật Khẩu Mới
+              </label>
+              <input
+                type="password"
+                value={confirmation}
+                onChange={(e) => setConfirmation(e.target.value)}
+                placeholder="Nhập lại mật khẩu mới"
+                required
+                className="w-full px-4 py-2.5 rounded-xl bg-[#0a2920] border border-[#184538] text-sm text-[#f5efe5] placeholder-emerald-700/60 focus:outline-none focus:border-[#c29b57] focus:ring-1 focus:ring-[#c29b57] transition font-medium"
+              />
+            </div>
           </div>
 
-          <div>
-            <label className="block text-xs font-semibold text-[#d49520] uppercase tracking-wider mb-1.5">
-              Xác Nhận Mật Khẩu Mới
-            </label>
-            <input
-              type="password"
-              value={confirmation}
-              onChange={(e) => setConfirmation(e.target.value)}
-              placeholder="Nhập lại mật khẩu mới"
-              required
-              minLength={6}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-[#1e1e1a] border border-[#39321f] text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#d49520] focus:ring-1 focus:ring-[#d49520] transition"
-            />
-          </div>
-
-          <div className="pt-4 border-t border-[#39321f] flex flex-col sm:flex-row items-center justify-between gap-3">
-            <button
-              type="button"
-              onClick={handleOpenKeycloakReset}
-              className="text-xs text-[#d49520] hover:text-[#f0b542] underline underline-offset-4 transition flex items-center gap-1.5"
-            >
-              <KeyRound className="w-3.5 h-3.5 text-[#d49520]" />
-              Đặt lại mật khẩu qua giao diện Keycloak ↗
-            </button>
-
+          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full sm:w-auto py-2.5 px-5 rounded-xl font-bold text-xs bg-gradient-to-r from-[#710008] to-[#91131c] hover:from-[#840610] hover:to-[#a31923] text-white shadow-lg shadow-[#710008]/40 active:scale-[0.99] transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+              className="py-2.5 px-6 rounded-xl font-bold text-xs bg-gradient-to-r from-[#0d4838] to-[#16654f] hover:from-[#073327] hover:to-[#0d4838] text-[#f5efe5] border border-[#c29b57]/50 shadow-md shadow-[#0d4838]/40 transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               {isLoading ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin text-white" />
-                  <span>Đang cập nhật...</span>
+                  <Loader2 className="w-4 h-4 animate-spin text-[#c29b57]" />
+                  <span>Đang cập nhật mật khẩu...</span>
                 </>
               ) : (
                 <>
-                  <Check className="w-4 h-4 text-white" />
+                  <Check className="w-4 h-4 text-[#c29b57]" />
                   <span>Cập Nhật Mật Khẩu</span>
                 </>
               )}
+            </button>
+
+            <button
+              type="button"
+              onClick={handleOpenKeycloakReset}
+              className="py-2 px-3 rounded-xl text-xs font-medium text-[#d8b06c]/90 hover:text-[#c29b57] hover:bg-[#0a2920] border border-transparent hover:border-[#184538] transition flex items-center justify-center gap-1.5 cursor-pointer"
+            >
+              <KeyRound className="w-3.5 h-3.5" />
+              <span>Quên mật khẩu? Reset qua Email</span>
             </button>
           </div>
 

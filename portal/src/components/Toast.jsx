@@ -14,10 +14,10 @@ export default function Toast() {
         const isError = toast.type === 'error';
 
         const borderBg = isSuccess
-          ? 'bg-[#1e1e1a]/95 border-[#d49520] text-[#d49520]'
+          ? 'bg-[#0a2920]/95 border-[#c29b57] text-[#c29b57]'
           : isError
-          ? 'bg-[#1e1e1a]/95 border-[#710008] text-red-300'
-          : 'bg-[#1e1e1a]/95 border-[#39321f] text-[#e9e5da]';
+          ? 'bg-[#0a2920]/95 border-[#76232d] text-red-300'
+          : 'bg-[#0a2920]/95 border-[#184538] text-[#f5efe5]';
 
         const Icon = isSuccess ? CheckCircle2 : isError ? AlertTriangle : Info;
 

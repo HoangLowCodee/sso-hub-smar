@@ -56,7 +56,7 @@ export default function SsoDashboard() {
     ? 'CREATOR'
     : 'MEMBER';
 
-  // Danh sách các dự án hiện có trong hệ thống SSO-SMAR-HUB
+  // Danh sách các dự án hiện có trong hệ sinh thái SSO Hub
   const projects = [
     {
       id: 'creative-industry-center',
@@ -138,28 +138,28 @@ export default function SsoDashboard() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col z-10 bg-[#141412] text-[#e9e5da] font-[Inter,sans-serif]">
+    <div className="min-h-screen flex flex-col z-10 bg-[#061e17] text-[#f5efe5] font-[Inter,sans-serif]">
       
       {/* ===================================================================== */}
-      {/* TOP HEADER NAVIGATION - HERITAGE GOLD & CRIMSON */}
+      {/* TOP HEADER NAVIGATION - HERITAGE ECONOMY JADE & GOLD */}
       {/* ===================================================================== */}
-      <header className="bg-[#1e1e1a] border-b border-[#39321f] sticky top-0 z-40 backdrop-blur-xl shadow-lg">
+      <header className="bg-[#0a2920] border-b border-[#184538] sticky top-0 z-40 backdrop-blur-xl shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           
           {/* Logo & Platform Name */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#710008] to-[#91131c] border border-[#d49520]/40 flex items-center justify-center text-[#d49520] font-black text-sm shadow-md tracking-wider">
-              SMAR
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0d4838] to-[#16654f] border border-[#c29b57]/50 flex items-center justify-center text-[#c29b57] font-black text-sm shadow-md tracking-wider">
+              SSO
             </div>
             <div>
               <div className="font-bold text-sm text-white flex items-center gap-2 tracking-wide font-[Plus_Jakarta_Sans,sans-serif]">
-                SSO-SMAR-HUB
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#141412] text-[#d49520] border border-[#39321f] flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#d49520] animate-pulse"></span>
-                  SSO Active
+                SSO HUB
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#061e17] text-[#c29b57] border border-[#184538] flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#c29b57] animate-pulse"></span>
+                  Active
                 </span>
               </div>
-              <div className="text-[11px] text-[#b8aa85]">
+              <div className="text-[11px] text-[#d8b06c]/90">
                 Hệ thống Quản lý Dự án Tập trung
               </div>
             </div>
@@ -175,17 +175,17 @@ export default function SsoDashboard() {
                 setModalTab('profile');
                 setIsModalOpen(true);
               }}
-              className="flex items-center gap-2.5 py-1.5 px-3 rounded-xl bg-[#141412] hover:bg-[#252520] border border-[#39321f] text-xs transition cursor-pointer text-left group"
+              className="flex items-center gap-2.5 py-1.5 px-3 rounded-xl bg-[#061e17] hover:bg-[#0d4838]/40 border border-[#184538] text-xs transition cursor-pointer text-left group"
               title="Xem và chỉnh sửa thông tin tài khoản"
             >
-              <div className="w-7 h-7 rounded-lg bg-[#0e0e0c] border border-[#39321f] text-[#d49520] font-bold flex items-center justify-center group-hover:scale-105 transition shadow-sm">
+              <div className="w-7 h-7 rounded-lg bg-[#0a2920] border border-[#184538] text-[#c29b57] font-bold flex items-center justify-center group-hover:scale-105 transition shadow-sm">
                 {initial}
               </div>
               <div className="hidden sm:block">
-                <div className="font-semibold text-white leading-tight group-hover:text-[#d49520] transition">
+                <div className="font-semibold text-white leading-tight group-hover:text-[#c29b57] transition">
                   {fullName}
                 </div>
-                <div className="text-[10px] text-[#d49520] uppercase font-semibold tracking-wider">
+                <div className="text-[10px] text-[#c29b57] uppercase font-semibold tracking-wider">
                   {primaryRole}
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function SsoDashboard() {
             <button
               type="button"
               onClick={logout}
-              className="py-2 px-3 sm:px-3.5 rounded-xl font-semibold text-xs bg-[#141412] hover:bg-[#710008] text-[#b8aa85] hover:text-white border border-[#39321f] transition flex items-center gap-1.5 cursor-pointer shadow-sm"
+              className="py-2 px-3 sm:px-3.5 rounded-xl font-semibold text-xs bg-[#061e17] hover:bg-[#76232d] text-[#d8b06c] hover:text-white border border-[#184538] transition flex items-center gap-1.5 cursor-pointer shadow-sm"
               title="Đăng xuất khỏi toàn bộ hệ thống"
             >
               <LogOut className="w-3.5 h-3.5" />
@@ -212,41 +212,41 @@ export default function SsoDashboard() {
       {/* ===================================================================== */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
-        {/* Banner Chào Mừng & Thống Kê - Heritage Gold & Crimson Accent */}
-        <div className="relative overflow-hidden rounded-2xl bg-[#1e1e1a] border border-[#39321f] p-6 sm:p-8 mb-8 shadow-2xl backdrop-blur-xl">
+        {/* Banner Chào Mừng & Thống Kê - Heritage Jade & Gold Accent */}
+        <div className="relative overflow-hidden rounded-2xl bg-[#0a2920] border border-[#184538] p-6 sm:p-8 mb-8 shadow-2xl backdrop-blur-xl">
           {/* Subtle Ambient lights */}
-          <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-[#710008]/15 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#d49520]/10 blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-[#0d4838]/30 blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#c29b57]/15 blur-3xl pointer-events-none" />
 
           <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#141412] text-[#d49520] border border-[#39321f] mb-3">
-                <Sparkles className="w-3.5 h-3.5 text-[#d49520]" /> Bảng Điều Khiển Quản Lý Dự Án Tập Trung
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#061e17] text-[#c29b57] border border-[#184538] mb-3">
+                <Sparkles className="w-3.5 h-3.5 text-[#c29b57]" /> Bảng Điều Khiển Quản Lý Dự Án Tập Trung
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-[Plus_Jakarta_Sans,sans-serif]">
-                Xin chào, <span className="text-[#d49520]">{fullName}</span>!
+                Xin chào, <span className="text-[#c29b57]">{fullName}</span>!
               </h2>
-              <p className="mt-2 text-sm text-[#b8aa85] max-w-2xl leading-relaxed">
-                Tất cả các dự án bên dưới đã được liên kết với tài khoản SSO-SMAR-HUB của bạn. 
+              <p className="mt-2 text-sm text-[#d8b06c]/90 max-w-2xl leading-relaxed">
+                Tất cả các dự án bên dưới đã được liên kết với tài khoản SSO Hub của bạn. 
                 <strong className="text-white font-semibold"> Nhấp vào bất kỳ dự án nào để chuyển hướng trực tiếp vào Trang Admin</strong> với quyền quản trị viên mà không cần nhập lại mật khẩu.
               </p>
             </div>
 
             {/* Thống kê 3 chỉ số */}
             <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
-              <div className="p-3.5 rounded-xl bg-[#141412] border border-[#39321f] text-center min-w-[90px]">
-                <div className="text-[10px] text-[#b8aa85] font-medium">Tổng dự án</div>
+              <div className="p-3.5 rounded-xl bg-[#061e17] border border-[#184538] text-center min-w-[90px]">
+                <div className="text-[10px] text-[#d8b06c]/80 font-medium">Tổng dự án</div>
                 <div className="text-base sm:text-lg font-bold text-white mt-0.5">3 Dự án</div>
               </div>
-              <div className="p-3.5 rounded-xl bg-[#141412] border border-[#39321f] text-center min-w-[90px]">
-                <div className="text-[10px] text-[#b8aa85] font-medium">Phiên SSO</div>
-                <div className="text-base sm:text-lg font-bold text-[#d49520] mt-0.5 flex items-center justify-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-[#d49520] animate-pulse"></span> Sẵn sàng
+              <div className="p-3.5 rounded-xl bg-[#061e17] border border-[#184538] text-center min-w-[90px]">
+                <div className="text-[10px] text-[#d8b06c]/80 font-medium">Phiên SSO</div>
+                <div className="text-base sm:text-lg font-bold text-[#c29b57] mt-0.5 flex items-center justify-center gap-1">
+                  <span className="w-2 h-2 rounded-full bg-[#c29b57] animate-pulse"></span> Sẵn sàng
                 </div>
               </div>
-              <div className="p-3.5 rounded-xl bg-[#141412] border border-[#39321f] text-center min-w-[90px]">
-                <div className="text-[10px] text-[#b8aa85] font-medium">Quyền hạn</div>
-                <div className="text-base sm:text-lg font-bold text-[#d49520] mt-0.5">Admin</div>
+              <div className="p-3.5 rounded-xl bg-[#061e17] border border-[#184538] text-center min-w-[90px]">
+                <div className="text-[10px] text-[#d8b06c]/80 font-medium">Quyền hạn</div>
+                <div className="text-base sm:text-lg font-bold text-[#c29b57] mt-0.5">Admin</div>
               </div>
             </div>
           </div>
@@ -259,7 +259,7 @@ export default function SsoDashboard() {
           
           {/* Ô Tìm Kiếm Dự Án */}
           <div className="relative flex-1 max-w-md">
-            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-500">
+            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-emerald-600/70">
               <Search className="w-4 h-4" />
             </div>
             <input
@@ -267,7 +267,7 @@ export default function SsoDashboard() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Tìm kiếm dự án theo tên, công nghệ, tag..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#1e1e1a] border border-[#39321f] text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#d49520] focus:ring-1 focus:ring-[#d49520] transition"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#0a2920] border border-[#184538] text-sm text-[#f5efe5] placeholder-emerald-700/60 focus:outline-none focus:border-[#c29b57] focus:ring-1 focus:ring-[#c29b57] transition"
             />
             {searchQuery && (
               <button
@@ -284,14 +284,14 @@ export default function SsoDashboard() {
           <div className="flex flex-wrap items-center gap-2.5">
             
             {/* Category filter buttons */}
-            <div className="flex items-center p-1 rounded-xl bg-[#1e1e1a] border border-[#39321f] text-xs">
+            <div className="flex items-center p-1 rounded-xl bg-[#0a2920] border border-[#184538] text-xs">
               <button
                 type="button"
                 onClick={() => setFilterCategory('all')}
                 className={`px-3 py-1.5 rounded-lg font-semibold transition ${
                   filterCategory === 'all'
-                    ? 'bg-gradient-to-r from-[#710008] to-[#91131c] text-white shadow-sm'
-                    : 'text-[#b8aa85] hover:text-white'
+                    ? 'bg-gradient-to-r from-[#0d4838] to-[#16654f] text-[#f5efe5] border border-[#c29b57]/40 shadow-sm'
+                    : 'text-[#d8b06c]/80 hover:text-white'
                 }`}
               >
                 Tất cả (3)
@@ -301,8 +301,8 @@ export default function SsoDashboard() {
                 onClick={() => setFilterCategory('culture')}
                 className={`px-3 py-1.5 rounded-lg font-semibold transition ${
                   filterCategory === 'culture'
-                    ? 'bg-gradient-to-r from-[#710008] to-[#91131c] text-white shadow-sm'
-                    : 'text-[#b8aa85] hover:text-white'
+                    ? 'bg-gradient-to-r from-[#0d4838] to-[#16654f] text-[#f5efe5] border border-[#c29b57]/40 shadow-sm'
+                    : 'text-[#d8b06c]/80 hover:text-white'
                 }`}
               >
                 Kỷ Lục / Sáng Tạo
@@ -312,8 +312,8 @@ export default function SsoDashboard() {
                 onClick={() => setFilterCategory('retail')}
                 className={`px-3 py-1.5 rounded-lg font-semibold transition ${
                   filterCategory === 'retail'
-                    ? 'bg-gradient-to-r from-[#710008] to-[#91131c] text-white shadow-sm'
-                    : 'text-[#b8aa85] hover:text-white'
+                    ? 'bg-gradient-to-r from-[#0d4838] to-[#16654f] text-[#f5efe5] border border-[#c29b57]/40 shadow-sm'
+                    : 'text-[#d8b06c]/80 hover:text-white'
                 }`}
               >
                 Là Việt
@@ -321,17 +321,17 @@ export default function SsoDashboard() {
             </div>
 
             {/* Launch Mode: Cloud (Production) vs Local (Dev) */}
-            <div className="flex items-center p-1 rounded-xl bg-[#1e1e1a] border border-[#39321f] text-xs">
-              <span className="px-2.5 text-[#b8aa85] text-[11px] font-semibold flex items-center gap-1">
-                <SlidersHorizontal className="w-3 h-3 text-[#d49520]" /> Đích đến:
+            <div className="flex items-center p-1 rounded-xl bg-[#0a2920] border border-[#184538] text-xs">
+              <span className="px-2.5 text-[#d8b06c]/80 text-[11px] font-semibold flex items-center gap-1">
+                <SlidersHorizontal className="w-3 h-3 text-[#c29b57]" /> Đích đến:
               </span>
               <button
                 type="button"
                 onClick={() => setLaunchMode('cloud')}
                 className={`px-3 py-1.5 rounded-lg font-semibold transition flex items-center gap-1.5 ${
                   launchMode === 'cloud'
-                    ? 'bg-[#141412] text-[#d49520] border border-[#d49520]/40 shadow-sm'
-                    : 'text-[#b8aa85] hover:text-white'
+                    ? 'bg-[#061e17] text-[#c29b57] border border-[#c29b57]/50 shadow-sm'
+                    : 'text-[#d8b06c]/80 hover:text-white'
                 }`}
                 title="Mở các link deploy trên Vercel"
               >
@@ -343,8 +343,8 @@ export default function SsoDashboard() {
                 onClick={() => setLaunchMode('local')}
                 className={`px-3 py-1.5 rounded-lg font-semibold transition flex items-center gap-1.5 ${
                   launchMode === 'local'
-                    ? 'bg-[#141412] text-[#d49520] border border-[#d49520]/40 shadow-sm'
-                    : 'text-[#b8aa85] hover:text-white'
+                    ? 'bg-[#061e17] text-[#c29b57] border border-[#c29b57]/50 shadow-sm'
+                    : 'text-[#d8b06c]/80 hover:text-white'
                 }`}
                 title="Mở các cổng dev local trên máy (:5173, :3000)"
               >
@@ -372,34 +372,34 @@ export default function SsoDashboard() {
               <div
                 key={project.id}
                 onClick={() => handleRedirectToAdmin(project)}
-                className="group relative bg-[#1e1e1a] rounded-2xl p-6 sm:p-7 border border-[#39321f] hover:border-[#d49520] transition-all duration-300 hover:shadow-2xl hover:shadow-[#710008]/20 flex flex-col justify-between cursor-pointer overflow-hidden transform hover:-translate-y-1"
+                className="group relative bg-[#0a2920] rounded-2xl p-6 sm:p-7 border border-[#184538] hover:border-[#c29b57] transition-all duration-300 hover:shadow-2xl hover:shadow-[#0d4838]/30 flex flex-col justify-between cursor-pointer overflow-hidden transform hover:-translate-y-1"
               >
                 <div>
                   
                   {/* Top Bar of Card: Icon & Badge */}
                   <div className="flex items-start justify-between mb-5">
-                    <div className="w-13 h-13 rounded-2xl bg-[#0e0e0c] border border-[#39321f] text-[#d49520] flex items-center justify-center p-3 font-bold text-xl shadow-md group-hover:bg-[#710008] group-hover:text-white group-hover:border-[#d49520] transition">
+                    <div className="w-13 h-13 rounded-2xl bg-[#061e17] border border-[#184538] text-[#c29b57] flex items-center justify-center p-3 font-bold text-xl shadow-md group-hover:bg-[#0d4838] group-hover:text-[#f5efe5] group-hover:border-[#c29b57] transition">
                       <Icon className="w-7 h-7" />
                     </div>
 
                     <div className="flex flex-col items-end gap-1.5">
-                      <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#141412] text-[#d49520] border border-[#39321f] flex items-center gap-1">
-                        <CheckCircle2 className="w-3 h-3 text-[#d49520]" /> Sẵn sàng SSO
+                      <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#061e17] text-[#c29b57] border border-[#184538] flex items-center gap-1">
+                        <CheckCircle2 className="w-3 h-3 text-[#c29b57]" /> Sẵn sàng SSO
                       </span>
-                      <span className="text-[10px] text-[#b8aa85] font-mono">
+                      <span className="text-[10px] text-[#d8b06c]/80 font-mono">
                         {project.badgeText}
                       </span>
                     </div>
                   </div>
 
                   {/* Project Title */}
-                  <h3 className="text-lg font-bold text-white group-hover:text-[#d49520] transition flex items-center gap-1.5 leading-snug font-[Plus_Jakarta_Sans,sans-serif]">
+                  <h3 className="text-lg font-bold text-white group-hover:text-[#c29b57] transition flex items-center gap-1.5 leading-snug font-[Plus_Jakarta_Sans,sans-serif]">
                     <span>{project.title}</span>
-                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-[#d49520] flex-shrink-0" />
+                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-[#c29b57] flex-shrink-0" />
                   </h3>
 
                   {/* Project Description */}
-                  <p className="text-xs text-[#b8aa85] mt-2.5 line-clamp-3 leading-relaxed">
+                  <p className="text-xs text-[#d8b06c]/90 mt-2.5 line-clamp-3 leading-relaxed">
                     {project.description}
                   </p>
 
@@ -408,7 +408,7 @@ export default function SsoDashboard() {
                     {project.tags.map((tag, idx) => (
                       <span
                         key={idx}
-                        className="px-2.5 py-0.5 rounded-md text-[10px] bg-[#141412] border border-[#39321f] text-[#e9e5da] font-mono"
+                        className="px-2.5 py-0.5 rounded-md text-[10px] bg-[#061e17] border border-[#184538] text-[#f5efe5] font-mono"
                       >
                         {tag}
                       </span>
@@ -416,21 +416,21 @@ export default function SsoDashboard() {
                   </div>
 
                   {/* Destination Admin URL Preview */}
-                  <div className="p-2.5 rounded-xl bg-[#141412] border border-[#39321f] text-[11px] font-mono text-[#b8aa85] truncate flex items-center gap-2 mb-4">
-                    <Globe className="w-3.5 h-3.5 text-[#d49520] flex-shrink-0" />
+                  <div className="p-2.5 rounded-xl bg-[#061e17] border border-[#184538] text-[11px] font-mono text-[#d8b06c]/90 truncate flex items-center gap-2 mb-4">
+                    <Globe className="w-3.5 h-3.5 text-[#c29b57] flex-shrink-0" />
                     <span className="truncate">{targetAdminUrl}</span>
                   </div>
 
                 </div>
 
                 {/* Card Action Buttons */}
-                <div className="space-y-2.5 pt-4 border-t border-[#39321f]">
+                <div className="space-y-2.5 pt-4 border-t border-[#184538]">
                   
-                  {/* NÚT CHÍNH: MÀU ĐỎ DI SẢN / KỶ LỤC HOÀNG GIA - REDIRECT SANG ADMIN */}
+                  {/* NÚT CHÍNH: JADE & GOLD HERITAGE ECONOMY - REDIRECT SANG ADMIN */}
                   <button
                     type="button"
                     onClick={() => handleRedirectToAdmin(project)}
-                    className="w-full py-3 px-4 rounded-xl font-bold text-xs bg-gradient-to-r from-[#710008] to-[#91131c] hover:from-[#840610] hover:to-[#a31923] text-white shadow-lg shadow-[#710008]/40 active:scale-[0.99] transition flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3 px-4 rounded-xl font-bold text-xs bg-gradient-to-r from-[#0d4838] to-[#16654f] hover:from-[#073327] hover:to-[#0d4838] text-[#f5efe5] border border-[#c29b57]/50 shadow-lg shadow-[#0d4838]/40 active:scale-[0.99] transition flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>VÀO TRANG QUẢN TRỊ (ADMIN PANEL)</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -440,11 +440,11 @@ export default function SsoDashboard() {
                   <button
                     type="button"
                     onClick={(e) => handleOpenPublicWeb(e, project)}
-                    className="w-full py-2 px-3 rounded-xl font-medium text-xs bg-[#141412] hover:bg-[#252520] text-[#d49520] hover:text-[#f0b542] border border-[#39321f] transition flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="w-full py-2 px-3 rounded-xl font-medium text-xs bg-[#061e17] hover:bg-[#0d4838]/40 text-[#c29b57] hover:text-[#d8b06c] border border-[#184538] transition flex items-center justify-center gap-1.5 cursor-pointer"
                     title="Mở trang chủ người dùng của dự án"
                   >
                     <span>Xem Trang Chủ Web</span>
-                    <ArrowUpRight className="w-3 h-3 text-[#b8aa85]" />
+                    <ArrowUpRight className="w-3 h-3 text-[#d8b06c]/80" />
                   </button>
 
                 </div>
@@ -456,10 +456,10 @@ export default function SsoDashboard() {
 
         {/* Empty Search Result Fallback */}
         {filteredProjects.length === 0 && (
-          <div className="text-center py-16 bg-[#1e1e1a] rounded-2xl border border-[#39321f]">
-            <FolderKanban className="w-12 h-12 text-[#b8aa85] mx-auto mb-3" />
+          <div className="text-center py-16 bg-[#0a2920] rounded-2xl border border-[#184538]">
+            <FolderKanban className="w-12 h-12 text-[#d8b06c]/80 mx-auto mb-3" />
             <h4 className="text-base font-semibold text-white">Không tìm thấy dự án phù hợp</h4>
-            <p className="text-xs text-[#b8aa85] mt-1">
+            <p className="text-xs text-[#d8b06c]/80 mt-1">
               Thử tìm kiếm với từ khóa khác như "Sáng Tạo", "Kỷ Lục", "Là Việt", "Keycloak" hoặc chọn lại danh mục.
             </p>
           </div>
@@ -472,38 +472,38 @@ export default function SsoDashboard() {
       {/* ===================================================================== */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-2xl bg-[#1e1e1a] rounded-2xl border border-[#39321f] shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto custom-scrollbar animate-in fade-in zoom-in-95 duration-200">
+          <div className="relative w-full max-w-2xl bg-[#0a2920] rounded-2xl border border-[#184538] shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto custom-scrollbar animate-in fade-in zoom-in-95 duration-200">
             
             {/* Modal Header */}
-            <div className="flex items-center justify-between pb-4 border-b border-[#39321f] mb-6">
+            <div className="flex items-center justify-between pb-4 border-b border-[#184538] mb-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#0e0e0c] border border-[#39321f] text-[#d49520] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-[#061e17] border border-[#184538] text-[#c29b57] flex items-center justify-center font-bold">
                   {initial}
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-white">Cài Đặt Tài Khoản SSO-SMAR-HUB</h3>
-                  <p className="text-xs text-[#b8aa85]">{profile.email || profile.preferred_username}</p>
+                  <h3 className="text-base font-bold text-white">Cài Đặt Tài Khoản SSO Hub</h3>
+                  <p className="text-xs text-[#d8b06c]/80">{profile.email || profile.preferred_username}</p>
                 </div>
               </div>
 
               <button
                 type="button"
                 onClick={() => setIsModalOpen(false)}
-                className="p-1.5 rounded-xl bg-[#141412] hover:bg-[#252520] text-[#b8aa85] hover:text-white border border-[#39321f] transition cursor-pointer"
+                className="p-1.5 rounded-xl bg-[#061e17] hover:bg-[#0d4838]/40 text-[#d8b06c] hover:text-white border border-[#184538] transition cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* Modal Tabs */}
-            <div className="flex items-center gap-2 border-b border-[#39321f] mb-6 pb-1">
+            <div className="flex items-center gap-2 border-b border-[#184538] mb-6 pb-1">
               <button
                 type="button"
                 onClick={() => setModalTab('profile')}
                 className={`px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition cursor-pointer ${
                   modalTab === 'profile'
-                    ? 'bg-gradient-to-r from-[#710008] to-[#91131c] text-white shadow-sm'
-                    : 'text-[#b8aa85] hover:text-white'
+                    ? 'bg-gradient-to-r from-[#0d4838] to-[#16654f] text-[#f5efe5] border border-[#c29b57]/40 shadow-sm'
+                    : 'text-[#d8b06c]/80 hover:text-white'
                 }`}
               >
                 <UserCog className="w-4 h-4" />
@@ -515,8 +515,8 @@ export default function SsoDashboard() {
                 onClick={() => setModalTab('security')}
                 className={`px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition cursor-pointer ${
                   modalTab === 'security'
-                    ? 'bg-gradient-to-r from-[#710008] to-[#91131c] text-white shadow-sm'
-                    : 'text-[#b8aa85] hover:text-white'
+                    ? 'bg-gradient-to-r from-[#0d4838] to-[#16654f] text-[#f5efe5] border border-[#c29b57]/40 shadow-sm'
+                    : 'text-[#d8b06c]/80 hover:text-white'
                 }`}
               >
                 <KeyRound className="w-4 h-4" />
@@ -528,8 +528,8 @@ export default function SsoDashboard() {
                 onClick={() => setModalTab('session')}
                 className={`px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition cursor-pointer ${
                   modalTab === 'session'
-                    ? 'bg-gradient-to-r from-[#710008] to-[#91131c] text-white shadow-sm'
-                    : 'text-[#b8aa85] hover:text-white'
+                    ? 'bg-gradient-to-r from-[#0d4838] to-[#16654f] text-[#f5efe5] border border-[#c29b57]/40 shadow-sm'
+                    : 'text-[#d8b06c]/80 hover:text-white'
                 }`}
               >
                 <ShieldAlert className="w-4 h-4" />
