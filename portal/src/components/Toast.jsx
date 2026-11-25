@@ -14,10 +14,10 @@ export default function Toast() {
         const isError = toast.type === 'error';
 
         const borderBg = isSuccess
-          ? 'bg-zinc-950/95 border-zinc-600 text-white'
+          ? 'bg-[#1e1e1a]/95 border-[#d49520] text-[#d49520]'
           : isError
-          ? 'bg-zinc-950/95 border-red-600/80 text-red-200'
-          : 'bg-zinc-950/95 border-zinc-700 text-zinc-200';
+          ? 'bg-[#1e1e1a]/95 border-[#710008] text-red-300'
+          : 'bg-[#1e1e1a]/95 border-[#39321f] text-[#e9e5da]';
 
         const Icon = isSuccess ? CheckCircle2 : isError ? AlertTriangle : Info;
 
@@ -26,7 +26,7 @@ export default function Toast() {
             key={toast.id}
             className={`p-4 rounded-xl border shadow-2xl flex items-center gap-3 text-xs sm:text-sm font-medium transition-all pointer-events-auto backdrop-blur-xl ${borderBg}`}
           >
-            <Icon className="w-5 h-5 flex-shrink-0 text-white" />
+            <Icon className="w-5 h-5 flex-shrink-0" />
             <span className="flex-1 leading-snug">{toast.message}</span>
             <button
               type="button"

@@ -11,12 +11,18 @@ export default {
         mono: ['JetBrains Mono', 'monospace'],
       },
       colors: {
-        dark: {
-          950: '#09090b', // True deep dark
-          900: '#121215',
-          850: '#18181b',
-          800: '#27272a',
-          700: '#3f3f46',
+        heritage: {
+          bg: '#141412',
+          surface: '#1e1e1a',
+          elevated: '#0e0e0c',
+          border: '#39321f',
+          gold: '#d49520',
+          goldLight: '#f0b542',
+          goldMuted: '#b8aa85',
+          redDark: '#710008',
+          redLight: '#91131c',
+          redHover: '#a31923',
+          cream: '#e9e5da',
         }
       }
     },
